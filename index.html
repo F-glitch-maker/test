@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wtechsolutions.co.ke | Web Development & Digital Tools</title>
+    <meta
+      name="description"
+      content="Web development, Python apps, and digital business systems for businesses in Kenya."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand" aria-label="wtechsolutions.co.ke">
+          <span class="brand-mark">W</span>
+          <span class="brand-text">techsolutions.co.ke</span>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Python Developer & Digital Solutions</p>
+            <h1>Helping Kenyan businesses grow with smart digital tools.</h1>
+            <p class="lead">
+              I build websites and digital systems that help businesses operate faster, serve customers better, and grow with confidence.
+            </p>
+            <div class="cta-row">
+              <a class="primary-btn" href="#contact">Hire Me</a>
+              <a class="secondary-btn" href="#services">View Services</a>
+            </div>
+            <div class="trust-row">
+              <span>Fast delivery</span>
+              <span>Business-ready systems</span>
+              <span>Local support</span>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="mini-card mini-card-highlight">
+              <span class="label">Projects</span>
+              <strong>20+</strong>
+            </div>
+            <div class="mini-card">
+              <span class="label">Clients</span>
+              <strong>10+</strong>
+            </div>
+            <div class="mini-card">
+              <span class="label">Response</span>
+              <strong>24h</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section container">
+        <div class="section-heading">
+          <p class="eyebrow">About Me</p>
+          <h2>Professional support for modern businesses.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <p>
+              I build websites and digital tools for businesses in Kenya. My focus is on practical solutions that solve real problems, improve efficiency, and help businesses stand out online.
+            </p>
+          </div>
+          <div>
+            <ul class="check-list">
+              <li>Web development for businesses</li>
+              <li>Python apps and automation</li>
+              <li>Business systems and dashboards</li>
+              <li>Digital tools tailored to local business needs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section alt-bg">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Services</p>
+            <h2>What I can build for you.</h2>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="service-icon">🌐</div>
+              <h3>Web Development</h3>
+              <p>Professional websites designed to help businesses attract and convert more clients.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">🐍</div>
+              <h3>Python Apps</h3>
+              <p>Custom applications that streamline operations, reporting, and day-to-day business workflows.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">📊</div>
+              <h3>Business Systems</h3>
+              <p>Smart tools for inventory, management, client communication, and internal processes.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section container contact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk about your project.</h2>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-wrapper">
+              {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Reach me</h3>
+            <p>
+              Email:
+              <a href="mailto:fabianmuema06@gmail.com">fabianmuema06@gmail.com</a>
+            </p>
+            <p>WhatsApp: +254 708167550</p>
+            <p>Nairobi, Kenya</p>
+            <a
+              class="wa-btn"
+              href="https://wa.me/254708167550?text=Hello%20W%20Tech%20Solutions%2C%20I%20want%20to%20discuss%20a%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat on WhatsApp
+            </a>
+            <a
+              class="email-btn"
+              href="mailto:fabianmuema06@gmail.com?subject=Project%20Inquiry&body=Hello%20W%20Tech%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Email Me
+            </a>
+          </div>
+
+          <form class="contact-form" method="POST">
+            <div class="field-row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label>
+                Phone (optional)
+                <input type="tel" name="phone" placeholder="+254 ..." />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 wtechsolutions.co.ke. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <a
+      class="floating-whatsapp"
+      href="https://wa.me/254708167550?text=Hello%20wtechsolutions.co.ke%2C%20I%20want%20to%20discuss%20a%20project."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      WhatsApp
+    </a>
+  </body>
+</html>
